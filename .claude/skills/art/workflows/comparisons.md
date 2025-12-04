@@ -1,8 +1,10 @@
-# Illustrated Dichotomies & Comparisons Workflow
+# Illustrated Dichotomies & Comparisons Prompt Workflow
 
-**Hand-drawn side-by-side visual comparisons using UL aesthetic.**
+**Generates prompts for hand-drawn side-by-side visual comparisons using UL aesthetic.**
 
-Creates **VISUAL COMPARISONS** — "X vs Y" split compositions, before/after transformations, and illustrated contrasts with editorial style.
+Creates **VISUAL COMPARISON PROMPTS** — "X vs Y" split compositions, before/after transformations, and illustrated contrasts with editorial style.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -256,57 +258,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Default: 16:9 (horizontal)** — Classic side-by-side comparison
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 16:9 \
-  --output /path/to/comparison.png
-```
-
-**Model Recommendation:** nano-banana-pro or flux (both work well for split compositions)
-
-**Immediately Open:**
-```bash
-open /path/to/comparison.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Clear split** — Obvious division between two sides
-- [ ] **Visual contrast** — Metaphors clearly show the difference
-- [ ] **Balanced composition** — Equal visual weight to both sides
-- [ ] **Readable labels** — Side names and annotations legible
-- [ ] **Color differentiation** — Purple/teal (or purple/black) distinguishes sides
-- [ ] **Hand-drawn** — Both sides maintain editorial aesthetic
-- [ ] **Immediate understanding** — Difference obvious at a glance
-
-#### Must NOT Have
-- [ ] Unbalanced sides (one dominates)
-- [ ] Unclear which is which
-- [ ] Corporate comparison chart look
-- [ ] Gradients or photorealistic elements
-- [ ] Cluttered or confusing visuals
-- [ ] Missing dividing line or separation
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Sides unclear | "Strong black dividing line down center, clear LEFT: vs RIGHT: labels" |
-| Not balanced | "Equal visual weight, mirror structure, parallel composition both sides" |
-| Contrast weak | "Stronger metaphor contrast: [Side A metaphor] vs [Side B opposite metaphor]" |
-| Too complex | Simplify each side to single clear metaphor |
-| Colors confusing | "Purple accents left side only, Teal accents right side only" |
-| Looks corporate | Reference "editorial split composition, hand-drawn contrast illustration" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (16:9, 9:16, 1:1, etc.)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "editorial"
 
 ---
 
@@ -343,8 +302,7 @@ open /path/to/comparison.png
 2. Design split layout (orientation, mirror elements, colors)
 3. Construct prompt with split structure
 4. Choose aspect ratio for split type
-5. Generate with nano-banana-pro
-6. Validate for clarity and balance
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -358,4 +316,4 @@ open /path/to/comparison.png
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

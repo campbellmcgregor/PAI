@@ -1,8 +1,10 @@
-# Conceptual Maps & Landscapes Workflow
+# Conceptual Maps & Landscapes Prompt Workflow
 
-**Hand-drawn conceptual maps showing idea territories and domain landscapes using UL aesthetic.**
+**Generates prompts for hand-drawn conceptual maps showing idea territories and domain landscapes using UL aesthetic.**
 
-Creates **CONCEPTUAL MAPS** — illustrated maps of idea territories, not geographic locations, with editorial hand-drawn style.
+Creates **CONCEPTUAL MAP PROMPTS** — illustrated maps of idea territories, not geographic locations, with editorial hand-drawn style.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -299,57 +301,14 @@ Sign "Kai" small in bottom corner in charcoal (#2D2D2D).
 
 **Default: 16:9 (horizontal)** — Classic map orientation
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 16:9 \
-  --output /path/to/conceptual-map.png
-```
-
-**Model Recommendation:** nano-banana-pro (best for territory labels) or flux (stylistic variety)
-
-**Immediately Open:**
-```bash
-open /path/to/conceptual-map.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Map structure clear** — Territories, coastlines, borders obvious
-- [ ] **Conceptual geography** — Physical features represent ideas
-- [ ] **Readable labels** — Territory names and feature labels legible
-- [ ] **Hand-drawn** — Wobbly coastlines, imperfect borders, human quality
-- [ ] **Strategic color** — Purple/teal on key territories (subtle fills)
-- [ ] **Navigable** — Helps understand relationships between concepts
-- [ ] **Editorial aesthetic** — Maintains UL flat color, black linework
-
-#### Must NOT Have
-- [ ] Perfect digital map (too clean)
-- [ ] Realistic geographic features
-- [ ] Illegible territory names
-- [ ] Color chaos (too many territory colors)
-- [ ] Confusing metaphors (features don't represent concepts clearly)
-- [ ] Gradients or shadows
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Too precise/digital | "Hand-drawn wobbly coastlines, imperfect irregular borders, sketch quality" |
-| Unclear metaphors | Strengthen feature descriptions: "mountains represent [specific barrier]" |
-| Labels unreadable | Increase label sizes, clearer placement inside territories |
-| Too complex | Reduce to 4-6 major territories, simplify features |
-| Looks like real map | "Conceptual geography, metaphorical territories, abstract cartography" |
-| Missing relationships | Add rivers/bridges showing connections: "river connecting [A] to [B]" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (16:9, 1:1, 9:16)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "fantasy map"
 
 ---
 
@@ -380,8 +339,7 @@ open /path/to/conceptual-map.png
 2. Design map layout (orientation, shapes, features)
 3. Construct prompt with cartographic structure
 4. Choose aspect ratio for map type
-5. Generate with nano-banana-pro
-6. Validate for clarity and navigability
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -400,4 +358,4 @@ open /path/to/conceptual-map.png
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

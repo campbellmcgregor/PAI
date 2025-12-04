@@ -1,8 +1,10 @@
-# Conceptual Timelines & Progressions Workflow
+# Conceptual Timelines & Progressions Prompt Workflow
 
-**Hand-drawn timelines showing evolution, trends, and transformations using UL aesthetic.**
+**Generates prompts for hand-drawn timelines showing evolution, trends, and transformations using UL aesthetic.**
 
-Creates **ILLUSTRATED TIMELINES** — chronological progressions with visual metaphors for each stage, combining narrative arc with temporal information.
+Creates **ILLUSTRATED TIMELINE PROMPTS** — chronological progressions with visual metaphors for each stage.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -245,57 +247,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Default: 16:9 (horizontal)** — Classic timeline orientation
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 16:9 \
-  --output /path/to/timeline.png
-```
-
-**Model Recommendation:** nano-banana-pro (best for dates/text rendering)
-
-**Immediately Open:**
-```bash
-open /path/to/timeline.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Clear temporal flow** — Obviously progresses through time
-- [ ] **Readable dates/labels** — All text legible in hierarchy
-- [ ] **Illustrated milestones** — Visual metaphors at each point
-- [ ] **Hand-drawn timeline** — Organic line, not digital/straight
-- [ ] **Narrative arc visible** — Shows transformation, not just dates
-- [ ] **Strategic color** — Purple on critical moments, not everywhere
-- [ ] **Scannable** — Easy to follow progression at a glance
-
-#### Must NOT Have
-- [ ] Perfectly straight timeline
-- [ ] Generic boring milestone markers (just dots)
-- [ ] Illegible dates or cluttered text
-- [ ] Too many milestones (overwhelming)
-- [ ] Color chaos (everything highlighted)
-- [ ] Looks like Gantt chart or business timeline
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Timeline too straight | "Organic hand-drawn line, slight waviness, imperfect curve" |
-| No visual interest | "Small illustrated metaphors at each milestone showing the era's character" |
-| Text unreadable | Increase spacing, strengthen typography tier sizes |
-| Too cluttered | Reduce milestones to 4-6 key points, simplify |
-| Looks corporate | Reference "editorial illustration style, hand-drawn sketch aesthetic" |
-| Missing narrative | Emphasize metaphors that show transformation: "seedling → storm → sunrise" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (16:9, 21:9, 9:16, etc.)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "editorial"
 
 ---
 
@@ -329,8 +288,7 @@ open /path/to/timeline.png
 2. Design layout (orientation, metaphors, spacing)
 3. Construct prompt with illustrated progression
 4. Choose aspect ratio for orientation
-5. Generate with nano-banana-pro
-6. Validate for clarity and visual narrative
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -346,4 +304,4 @@ open /path/to/timeline.png
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

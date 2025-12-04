@@ -1,8 +1,10 @@
-# Visual Mental Models & Frameworks Workflow
+# Visual Mental Models & Frameworks Prompt Workflow
 
-**Hand-drawn frameworks, mental models, and conceptual diagrams using UL aesthetic.**
+**Generates prompts for hand-drawn frameworks, mental models, and conceptual diagrams using UL aesthetic.**
 
-Creates **VISUAL FRAMEWORKS** — Daniel's signature mental models illustrated as memorable diagrams with editorial hand-drawn style.
+Creates **VISUAL FRAMEWORK PROMPTS** — mental models illustrated as memorable diagrams with editorial hand-drawn style.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -258,56 +260,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Default: 1:1 (square)** — Works for most framework types
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 1:1 \
-  --output /path/to/framework.png
-```
-
-**Model Recommendation:** nano-banana-pro (best text rendering for labels)
-
-**Immediately Open:**
-```bash
-open /path/to/framework.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Framework structure clear** — 2x2 / Venn / Pyramid immediately recognizable
-- [ ] **Readable labels** — All text legible in 3-tier hierarchy
-- [ ] **Hand-drawn aesthetic** — Imperfect lines, organic shapes, human quality
-- [ ] **Strategic color** — Purple on optimal zone, teal on contrast, not everywhere
-- [ ] **Conceptually memorable** — This becomes THE reference image for framework
-- [ ] **Editorial style** — Maintains UL flat color, black linework aesthetic
-
-#### Must NOT Have
-- [ ] Perfect digital geometry (too clean)
-- [ ] Illegible or cluttered text
-- [ ] Color overload (solid fills everywhere)
-- [ ] Confusing structure (can't identify framework type)
-- [ ] Corporate/boring diagram look
-- [ ] Gradients or shadows
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Too precise/digital | "Hand-drawn wobbly axes, organic imperfect circles, human sketch quality" |
-| Text unreadable | Increase label sizes, simplify annotations |
-| Over-colored | "Subtle purple accent on optimal zone only, rest black structure" |
-| Confusing structure | Simplify framework, stronger geometry cues |
-| Looks corporate | Reference "editorial conceptual illustration, Saul Steinberg style" |
-| Not memorable | Add strategic annotation showing the insight: "*this is the sweet spot*" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (usually 1:1 square)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "diagram" or "illustration"
 
 ---
 
@@ -343,8 +303,7 @@ open /path/to/framework.png
 2. Design visual (geometry, labeling, color assignment)
 3. Construct prompt with clear structure
 4. Choose square aspect ratio (usually 1:1)
-5. Generate with nano-banana-pro
-6. Validate for clarity and memorability
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -354,9 +313,9 @@ open /path/to/framework.png
 - Text: Charcoal (except emphasized annotations)
 
 **Key Principle:**
-- This becomes THE reference image people remember for Daniel's framework
+- This becomes THE reference image people remember for the framework
 - Must be conceptually clear AND visually distinctive
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

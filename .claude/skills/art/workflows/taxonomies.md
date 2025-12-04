@@ -1,8 +1,10 @@
-# Visual Taxonomies & Classification Grids Workflow
+# Visual Taxonomies & Classification Grids Prompt Workflow
 
-**Hand-drawn classification systems, taxonomies, and reference grids using UL aesthetic.**
+**Generates prompts for hand-drawn classification systems, taxonomies, and reference grids using UL aesthetic.**
 
-Creates **VISUAL TAXONOMIES** — organized classification systems like periodic tables, capability matrices, or framework grids with editorial hand-drawn style.
+Creates **VISUAL TAXONOMY PROMPTS** — organized classification systems like periodic tables, capability matrices, or framework grids with editorial hand-drawn style.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -231,65 +233,21 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 | Taxonomy Type | Aspect Ratio | Reasoning |
 |---------------|--------------|-----------|
-| Wide grid (many columns) | 16:9 or 21:9 | Horizontal periodictable layout |
+| Wide grid (many columns) | 16:9 or 21:9 | Horizontal periodic table layout |
 | Tall hierarchy | 9:16 | Vertical tree structure |
 | Square matrix | 1:1 | Balanced 4x4 or 5x5 grid |
 | Reference card | 1:1 or 4:3 | Compact, poster-like |
 
 **Default: 1:1 (square)** — Works for most taxonomy grids
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 1:1 \
-  --output /path/to/taxonomy.png
-```
-
-**Model Recommendation:** nano-banana-pro (best text rendering for labels)
-
-**Immediately Open:**
-```bash
-open /path/to/taxonomy.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-**Open the generated image and check:**
-
-#### Must Have
-- [ ] **Clear grid structure** — Organized layout with visible cells/categories
-- [ ] **Readable text** — All labels legible in 3-tier hierarchy
-- [ ] **Hand-drawn aesthetic** — Wobbly lines, imperfect cells, human feel
-- [ ] **Strategic color** — Purple/teal differentiate categories, not overwhelming
-- [ ] **Scannable** — Easy to find and reference specific items
-- [ ] **Hierarchical clarity** — Title > Categories > Items is obvious
-- [ ] **Flat aesthetic** — No gradients, maintains UL editorial style
-
-#### Must NOT Have
-- [ ] Perfect straight grid lines
-- [ ] Polished vector graphics
-- [ ] Gradients or shadows
-- [ ] Illegible or tiny text
-- [ ] Color chaos (too many colors)
-- [ ] Confusing organization
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Grid too perfect | Emphasize "wobbly hand-drawn grid lines, organic imperfection" |
-| Text unreadable | Increase text size, strengthen typography tier requirements |
-| Too colorful | "Strategic color use — purple for [specific], teal for [specific], rest black" |
-| Unclear organization | Simplify grid, reduce categories, clarify groupings |
-| Looks digital | Reference "hand-drawn field guide, editorial notebook aesthetic" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above based on taxonomy type
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "infographic"
 
 ---
 
@@ -322,8 +280,7 @@ open /path/to/taxonomy.png
 2. Design grid layout (structure, cells, color coding)
 3. Construct prompt with 3-tier typography
 4. Choose aspect ratio for layout type
-5. Generate with nano-banana-pro
-6. Validate for clarity and aesthetics
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -339,4 +296,4 @@ open /path/to/taxonomy.png
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

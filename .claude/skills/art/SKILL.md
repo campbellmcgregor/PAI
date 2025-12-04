@@ -1,36 +1,49 @@
 ---
 name: art
 description: |
-  Complete visual content system for PAI.
-  Tron-meets-Excalidraw aesthetic - dark backgrounds, neon accents, hand-drawn sketch style.
+  AI image prompt generation system.
+  Generates structured prompts for any AI image generator (Midjourney, DALL-E, Flux, etc.).
+  Outputs prompt text only - no API calls.
 
 # Skill Triggers
 triggers:
-  - USE WHEN user wants to create visual content, illustrations, or diagrams
-  - USE WHEN user mentions art, header images, visualizations, or any visual request
-  - USE WHEN user references mermaid, flowchart, technical diagram, or infographic
+  - USE WHEN user wants to generate an image prompt
+  - USE WHEN user mentions art prompt, image prompt, or visual prompt
+  - USE WHEN user wants a prompt for illustrations, diagrams, or visualizations
 
 # Workflow Routing
 workflows:
-  - USE WHEN user wants blog header or editorial illustration: workflows/workflow.md
-  - USE WHEN user wants visualization or is unsure which format: workflows/visualize.md
-  - USE WHEN user wants mermaid flowchart or sequence diagram: workflows/mermaid.md
-  - USE WHEN user wants technical or architecture diagram: workflows/technical-diagrams.md
-  - USE WHEN user wants taxonomy or classification grid: workflows/taxonomies.md
-  - USE WHEN user wants timeline or chronological progression: workflows/timelines.md
-  - USE WHEN user wants framework or 2x2 matrix: workflows/frameworks.md
-  - USE WHEN user wants comparison or X vs Y: workflows/comparisons.md
-  - USE WHEN user wants annotated screenshot: workflows/annotated-screenshots.md
-  - USE WHEN user wants recipe card or step-by-step: workflows/recipe-cards.md
-  - USE WHEN user wants aphorism or quote card: workflows/aphorisms.md
-  - USE WHEN user wants conceptual map or territory: workflows/maps.md
-  - USE WHEN user wants stat card or big number visual: workflows/stats.md
-  - USE WHEN user wants comic or sequential panels: workflows/comics.md
+  - USE WHEN user wants blog header or editorial illustration prompt: workflows/workflow.md
+  - USE WHEN user wants visualization prompt or is unsure which format: workflows/visualize.md
+  - USE WHEN user wants mermaid flowchart or sequence diagram prompt: workflows/mermaid.md
+  - USE WHEN user wants technical or architecture diagram prompt: workflows/technical-diagrams.md
+  - USE WHEN user wants taxonomy or classification grid prompt: workflows/taxonomies.md
+  - USE WHEN user wants timeline or chronological progression prompt: workflows/timelines.md
+  - USE WHEN user wants framework or 2x2 matrix prompt: workflows/frameworks.md
+  - USE WHEN user wants comparison or X vs Y prompt: workflows/comparisons.md
+  - USE WHEN user wants annotated screenshot prompt: workflows/annotated-screenshots.md
+  - USE WHEN user wants recipe card or step-by-step prompt: workflows/recipe-cards.md
+  - USE WHEN user wants aphorism or quote card prompt: workflows/aphorisms.md
+  - USE WHEN user wants conceptual map or territory prompt: workflows/maps.md
+  - USE WHEN user wants stat card or big number visual prompt: workflows/stats.md
+  - USE WHEN user wants comic or sequential panels prompt: workflows/comics.md
 ---
 
 # Art Skill
 
-Complete visual content system using the **PAI Visual Aesthetic**.
+**AI Image Prompt Generation System**
+
+Generates structured, high-quality prompts ready to paste into any AI image generator.
+
+---
+
+## How It Works
+
+1. **Choose a workflow** based on content type
+2. **Follow the analysis steps** to design composition
+3. **Get a structured prompt** ready for your image generator
+
+**Output:** Prompt text you can paste into Midjourney, DALL-E, Flux, Stable Diffusion, or any other AI image tool.
 
 ---
 
@@ -66,34 +79,6 @@ Complete visual content system using the **PAI Visual Aesthetic**.
 | Idea territories | `workflows/maps.md` |
 | Big numbers | `workflows/stats.md` |
 | Sequential panels | `workflows/comics.md` |
-
----
-
-## Image Generation
-
-**Default model:** nano-banana-pro (Gemini 3 Pro)
-
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[PROMPT]" \
-  --size 2K \
-  --aspect-ratio 1:1 \
-  --output /path/to/output.png
-```
-
-### Alternative Models
-
-| Model | When to Use |
-|-------|-------------|
-| **flux** | Maximum quality |
-| **gpt-image-1** | Different interpretation |
-
-**API keys in:** `${PAI_DIR}/.env`
-- `REPLICATE_API_TOKEN` - Flux and Nano Banana
-- `OPENAI_API_KEY` - GPT-image-1
-- `GOOGLE_API_KEY` - Nano Banana Pro
-- `REMOVEBG_API_KEY` - Background removal
 
 ---
 

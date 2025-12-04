@@ -1,31 +1,29 @@
-# UL Art Image Generation Workflow
+# Editorial Illustration Prompt Workflow
 
-**Single consolidated workflow for creating editorial illustrations in the Anthropic style.**
+**Generates prompts for editorial illustrations in the Anthropic style.**
 
 Creates **ONE ABSTRACT VISUAL METAPHOR** — flat colors, hand-drawn black linework, muted earth tones.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
 ## 🚨 MANDATORY STEPS — EXECUTE IN ORDER
 
-**CRITICAL: ALL 6 STEPS ARE MANDATORY. Execute them IN ORDER. Do NOT skip steps. Do NOT improvise your own process.**
+**CRITICAL: ALL 4 STEPS ARE MANDATORY. Execute them IN ORDER. Do NOT skip steps. Do NOT improvise your own process.**
 
-**VIOLATION:** If you skip Step 1 (CSE) and derive concepts yourself, you are violating this workflow.
+**VIOLATION:** If you skip Step 1 (Story Explanation) and derive concepts yourself, you are violating this workflow.
 
 ```
 INPUT CONTENT
      ↓
-[1] CSE: Run /cse command to extract core thesis ← MANDATORY, DO NOT SKIP
+[1] STORY: Run story-explanation to extract narrative arc ← MANDATORY, DO NOT SKIP
      ↓
-[2] CONCEPT: Derive visual metaphor from LINE 8 of CSE output ← MANDATORY
+[2] CONCEPT: Derive visual metaphor from full narrative ← MANDATORY
      ↓
 [3] AESTHETIC: Apply Anthropic editorial style (flat, hand-drawn, earth tones)
      ↓
-[4] PROMPT: Construct with UltraThink
-     ↓
-[5] GENERATE: Execute CLI tool
-     ↓
-[6] VALIDATE: Flat? Hand-drawn? No gradients? Abstract?
+[4] PROMPT: Construct with UltraThink → OUTPUT FINAL PROMPT
 ```
 
 ---
@@ -219,11 +217,9 @@ Sign "Kai" as a tiny artist signature in charcoal (#2D2D2D) bottom right corner.
 NO other text anywhere.
 ```
 
-**IMPORTANT:** Always use `--remove-bg` flag to create transparency.
-
 ### Prompt Quality Check
 
-Before generating, verify:
+Before outputting, verify the prompt includes:
 - [ ] ONE composition, not multiple panels
 - [ ] 2-3 elements maximum
 - [ ] Background color specified with hex
@@ -232,103 +228,14 @@ Before generating, verify:
 - [ ] "Saul Steinberg" or "New Yorker" style reference
 - [ ] SPECIFIC to this content (couldn't be about something else)
 
-**Output:** A complete prompt ready for generation.
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
----
+### Recommended Settings for Generation
 
-## Step 5: Execute the Generation
-
-### Default Model: nano-banana-pro
-
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 1:1 \
-  --output /path/to/output.png
-```
-
-### Alternative Models
-
-| Model | Command | When to Use |
-|-------|---------|-------------|
-| **flux** | `--model flux --size 1:1` | Maximum quality |
-| **gpt-image-1** | `--model gpt-image-1 --size 1024x1024` | Different interpretation |
-
-### Immediately Open
-
-```bash
-open /path/to/output.png
-```
-
----
-
-## Step 6: Validation (MANDATORY - DO NOT SKIP)
-
-**🚨 CRITICAL: This step is MANDATORY. You MUST validate the image and regenerate if validation fails. DO NOT declare completion without passing validation.**
-
-### Validation Procedure
-
-1. **Open the generated image** for visual inspection:
-```bash
-open /path/to/generated-image.png
-```
-
-2. **Check ALL criteria below** - If ANY fail, you MUST regenerate
-
-3. **Do NOT proceed** to next steps until validation passes
-
-### Must Have (ALL REQUIRED)
-- [ ] **Flat background** — Single solid color, zero gradients
-- [ ] **Hand-drawn quality** — Lines are imperfect, variable weight
-- [ ] **Black linework** — Not colored lines, not smooth vectors
-- [ ] **Abstract metaphor** — Conceptual, not literal
-- [ ] **Full-bleed composition** — NO whitespace or margins, elements fill 100% of frame edge-to-edge
-- [ ] **Square aspect ratio** — 1:1 format (NOT 16:9 rectangle)
-- [ ] **Elements extend to edges** — Composition bleeds off all sides (NOT centered with margins)
-- [ ] **Muted earth tone** — Cream/terracotta/sage/peach background (if not transparent)
-- [ ] **🎨 COLOR PRESENCE (CRITICAL)** — Purple (#4A148C) and/or Teal (#00796B) MUST be visible and noticeable
-  - NOT microscopic hints - should be immediately apparent
-  - If you need to zoom in to see color, it's TOO SUBTLE
-  - Color should be visible at normal viewing distance
-  - Balance: accent, not dominant, but definitely present
-
-### Must NOT Have (ALL FORBIDDEN)
-- [ ] Any gradients anywhere
-- [ ] Shadows or glows
-- [ ] 3D rendering or depth
-- [ ] Glossy/shiny surfaces
-- [ ] Smooth perfect vector lines
-- [ ] Saturated or cool colors
-- [ ] Photorealistic elements
-- [ ] Too little color (all black with microscopic purple)
-
-### If Validation Fails - REGENERATION REQUIRED
-
-**DO NOT SKIP THIS STEP. If validation fails, you MUST regenerate.**
-
-Common failures and fixes:
-
-| Problem | Fix |
-|---------|-----|
-| **Not enough color** | Strengthen color requirement: "Deep Purple #4A148C must be VISIBLE and NOTICEABLE - not microscopic. Use on at least 5-10% of main elements. Should be immediately visible when viewing image." |
-| Has gradients | Add "FLAT colors only, absolutely NO gradients" more emphatically |
-| Lines too smooth | Emphasize "imperfect wobbly hand-drawn brush strokes" |
-| Too shiny/glossy | Add "matte, flat, risograph aesthetic" |
-| Too detailed | Simplify concept, "minimal abstract" |
-| Wrong colors | Specify exact hex codes, "muted earth tones only" |
-| Looks like AI art | Reference "Saul Steinberg", "Matisse cutouts", "risograph" |
-
-**Regeneration Process:**
-1. Identify which validation criteria failed
-2. Update prompt with specific fixes from table above
-3. Regenerate using same command with adjusted prompt
-4. Open new image and re-validate
-5. Repeat until ALL validation criteria pass
-6. Only then proceed to completion
-
-**CRITICAL: You are NOT done until validation passes. Declaring completion without validation is a failure.**
+When using the prompt, suggest these settings:
+- **Aspect ratio:** 1:1 (square)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "artistic"
 
 ---
 
@@ -336,40 +243,32 @@ Common failures and fixes:
 
 ### The Key Insight
 
-**24-ITEM STORY → NARRATIVE ARC → VISUAL JOURNEY → FLAT HAND-DRAWN EDITORIAL**
+**24-ITEM STORY → NARRATIVE ARC → VISUAL JOURNEY → FLAT HAND-DRAWN EDITORIAL PROMPT**
 
 1. Run 24-item story explanation to get FULL narrative arc
 2. Use ALL 24 items to understand transformation/journey/process
 3. Find ONE visual metaphor that shows the ARC (not just endpoint)
 4. Reduce to 2-3 abstract elements that show MOVEMENT/CHANGE
-5. Generate with flat background + hand-drawn black linework
+5. Construct prompt with flat background + hand-drawn black linework
 
 Bad: "Detailed illustration of a complex scene with multiple characters"
 Good: "Timeline showing dense circles → sparse → dense again with arrows" (shows journey)
 Good: "Scissors mid-cut through tangled yarn ball" (shows process)
 
-### Models
-
-| Model | Command | Best For |
-|-------|---------|----------|
-| **nano-banana-pro** (DEFAULT) | `--model nano-banana-pro --size 2K --aspect-ratio 1:1` | High quality, good adherence |
-| **flux** | `--model flux --size 1:1` | Maximum quality, slower |
-| **gpt-image-1** | `--model gpt-image-1 --size 1024x1024` | Minimalism, alternative |
-
 ### The Anthropic Look Checklist
 
-Before submitting any image:
-- ✅ Flat solid background (cream/terracotta/sage/peach or transparent)
+Ensure your prompt specifies:
+- ✅ Flat solid background (cream/terracotta/sage/peach or white for transparency)
 - ✅ Black hand-drawn linework (imperfect, gestural)
 - ✅ Abstract conceptual metaphor
 - ✅ Full-bleed edge-to-edge composition (NO whitespace or margins)
-- ✅ Square 1:1 aspect ratio (NOT 16:9)
+- ✅ Square 1:1 aspect ratio
 - ✅ Elements extend to or bleed off all edges (100% frame fill)
 - ✅ 2-3 elements maximum
 - ✅ No gradients, shadows, or shine
 - ✅ Kai signature bottom right
-- ✅ **COLOR VISIBLE** - Purple and/or Teal must be noticeable (not microscopic)
+- ✅ Purple (#4A148C) and/or Teal (#00796B) as visible accents
 
 ---
 
-**The workflow: CSE → Concept → Flat Editorial Prompt → Generate → VALIDATE (MANDATORY) → Regenerate if needed → Complete**
+**The workflow: Story → Concept → Aesthetic → Prompt → OUTPUT**

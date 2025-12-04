@@ -1,8 +1,10 @@
-# Adaptive Content Visualization Workflow
+# Adaptive Visualization Prompt Workflow
 
-**Intelligent multi-modal visualization combining optimal approaches based on content analysis.**
+**Intelligent prompt generation combining optimal visualization approaches based on content analysis.**
 
-Creates **ADAPTIVE VISUALIZATIONS** — analyzes content to select and orchestrate the best combination of visualization techniques, from pure data viz to mixed-media infographics to multi-panel compositions.
+Creates **ADAPTIVE VISUALIZATION PROMPTS** — analyzes content to select and orchestrate the best combination of visualization techniques, outputting structured prompts for any AI image generator.
+
+**Output:** A comprehensive prompt ready to paste into Midjourney, DALL-E, Flux, or any AI image tool.
 
 ---
 
@@ -15,7 +17,6 @@ The Visualize workflow is the **intelligent visualization orchestrator**. Unlike
 - The content has multiple dimensions (data + narrative + concepts)
 - You want the most effective visualization, not a predetermined format
 - You're asking "what's the best way to visualize this?"
-- You want to leverage Nano Banana Pro's full capabilities
 
 **This workflow DOES NOT use:**
 - Predetermined templates
@@ -24,12 +25,12 @@ The Visualize workflow is the **intelligent visualization orchestrator**. Unlike
 
 ---
 
-## Nano Banana Pro Capabilities
+## Visualization Capabilities
 
-**Understanding what's possible:**
+**Understanding what's possible with modern AI image generators:**
 
 ### Core Strengths
-1. **Exceptional text rendering** — Clean typography, readable labels, multiple text tiers
+1. **Text rendering** — Clean typography, readable labels, multiple text tiers
 2. **Data visualization** — Charts, graphs, quantitative displays
 3. **Infographic composition** — Multi-element layouts, mixed media
 4. **Iconic illustration** — Simple recognizable symbols and icons
@@ -37,7 +38,7 @@ The Visualize workflow is the **intelligent visualization orchestrator**. Unlike
 6. **Hybrid compositions** — Data + illustration + typography together
 7. **Slide-quality output** — Presentation-ready visualizations
 
-### What Nano Banana Pro Excels At
+### What Works Well
 - **Text-heavy compositions** — Infographics with lots of labels
 - **Data + context** — Numbers with explanatory illustrations
 - **Icon systems** — Repeated simplified icons showing quantities
@@ -294,12 +295,12 @@ ELEMENT SPECIFICATIONS:
 
 ### Step 4: Construct Comprehensive Prompt (MANDATORY - Use UltraThink)
 
-**Build the generation prompt leveraging Nano Banana Pro's capabilities:**
+**Build the visualization prompt for the user's image generator:**
 
 #### Prompt Structure Template
 
 ```
-[VISUALIZATION TYPE] in editorial infographic style optimized for Nano Banana Pro.
+[VISUALIZATION TYPE] in editorial infographic style.
 
 OVERALL CONCEPT: "[What this visualization communicates]"
 
@@ -373,8 +374,8 @@ COLOR USAGE (Strategic, not overwhelming):
 - Charcoal (#2D2D2D): [All text labels and annotations]
 - Background: [Light Cream or White]
 
-CRITICAL REQUIREMENTS FOR NANO BANANA PRO:
-- Exceptional text rendering required (multiple labels, clean typography)
+CRITICAL REQUIREMENTS:
+- Exceptional text rendering (multiple labels, clean typography)
 - Data precision where needed (accurate chart rendering)
 - Hand-drawn editorial quality where appropriate
 - Multi-element composition with clear visual hierarchy
@@ -384,99 +385,17 @@ CRITICAL REQUIREMENTS FOR NANO BANANA PRO:
 - Strategic color (not every element colored)
 - All elements work together as unified composition
 
-VALIDATION CHECKPOINTS:
-- Is the primary message immediately clear?
-- Can each element be read/understood independently?
-- Do elements work together to tell complete story?
-- Is typography hierarchy obvious?
-- Are data elements accurate and precise?
-- Do editorial elements enhance (not distract from) information?
-
 Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 ```
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Generate with Nano Banana Pro
+### Recommended Settings for Generation
 
-**Execute the visualization:**
-
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR COMPREHENSIVE PROMPT]" \
-  --size 2K \
-  --aspect-ratio [chosen ratio] \
-  --output /path/to/visualization.png
-```
-
-**Why Nano Banana Pro for this workflow:**
-- Best text rendering among all models (critical for infographics)
-- Handles complex multi-element compositions well
-- Excellent at data visualization elements
-- Can combine precise (charts) with expressive (editorial) styles
-- Reliable for professional deliverable quality
-
-**Immediately open for review:**
-```bash
-open /path/to/visualization.png
-```
-
----
-
-### Step 6: Comprehensive Validation (MANDATORY)
-
-**Validate across multiple dimensions:**
-
-#### Information Effectiveness
-- [ ] **Primary message clear:** Main insight obvious within 3 seconds
-- [ ] **Data accuracy:** Numbers, proportions, relationships accurate
-- [ ] **Visual hierarchy works:** Eye flows from primary → secondary → tertiary
-- [ ] **All elements readable:** Text legible, charts clear, icons recognizable
-- [ ] **Story cohesion:** Elements work together, not competing
-
-#### Design Quality
-- [ ] **Professional deliverable:** Client/publication ready
-- [ ] **UL aesthetic maintained:** Flat colors, appropriate hand-drawn vs precise
-- [ ] **Typography hierarchy clear:** 3 tiers obviously distinct
-- [ ] **Color strategic:** Purple/teal highlight key elements, not overwhelming
-- [ ] **Composition balanced:** Visual weight distributed appropriately
-
-#### Technical Execution
-- [ ] **Text rendering clean:** No blurry or malformed letters
-- [ ] **Data viz precision:** Charts/graphs accurate and clear
-- [ ] **Scale works:** Readable as thumbnail AND full-size
-- [ ] **No gradients/shadows:** Flat aesthetic maintained
-- [ ] **Aspect ratio appropriate:** Format suits content and use case
-
-#### Audience Appropriateness
-- [ ] **Matches audience sophistication:** Not too simple or too complex
-- [ ] **Serves communication goal:** Actually achieves intended purpose
-- [ ] **Platform optimized:** Works for intended distribution (social/email/presentation)
-
-#### If Validation Fails
-
-**Common issues and fixes:**
-
-| Problem | Diagnosis | Fix |
-|---------|-----------|-----|
-| **Too cluttered** | Too many elements competing | Simplify: reduce to 2-3 main elements, increase whitespace |
-| **Message unclear** | No clear visual hierarchy | Strengthen primary element (make larger, add purple), reduce secondary |
-| **Text unreadable** | Font too small or wrong tier | Increase label sizes, strengthen typography tier differentiation |
-| **Data imprecise** | Chart rendering issues | Add specific data points in prompt, request precision explicitly |
-| **Looks generic** | Missing UL aesthetic | Add hand-drawn editorial elements, strategic purple/teal, flatten any gradients |
-| **Elements disconnected** | Poor composition | Redesign spatial layout, add visual connectors (arrows, borders, grouping) |
-| **Color chaos** | Too much color everywhere | Limit purple to 2-3 key elements, teal to 1-2 supporting, rest black/charcoal |
-| **Not professional** | Too sketchy or too rigid | Balance: data viz precise, editorial elements hand-drawn, clean typography |
-
-**Regeneration Process:**
-1. Identify specific validation failures
-2. Update prompt with targeted fixes
-3. Regenerate with refined prompt
-4. Re-validate against all checkpoints
-5. Repeat until ALL validation criteria pass
-
-**CRITICAL: Do not declare completion until validation passes.**
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As specified in prompt (1:1, 16:9, 9:16, or 4:3)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "infographic" or "illustration"
 
 ---
 
@@ -566,19 +485,9 @@ Design composition (Step 3)
    ↓
 Construct comprehensive prompt (Step 4)
    → Detailed element specifications
-   → Leverage Nano Banana Pro strengths
-   → Clear validation checkpoints
+   → Clear structure and requirements
    ↓
-Generate with nano-banana-pro (Step 5)
-   ↓
-VALIDATE comprehensively (Step 6)
-   → Information effectiveness
-   → Design quality
-   → Technical execution
-   → Audience appropriateness
-   ↓
-PASS? → Complete
-FAIL? → Diagnose, fix, regenerate
+OUTPUT prompt to user
 ```
 
 ---
@@ -592,23 +501,15 @@ FAIL? → Diagnose, fix, regenerate
 - Creating professional infographics or slides
 - Need sophisticated composition beyond single workflow
 
-### Nano Banana Pro Advantages
-- Best text rendering (critical for labels/annotations)
-- Multi-element composition handling
-- Data visualization capabilities
-- Professional infographic quality
-- Hybrid precision + expressiveness
-
 ### Core Principles
 1. **Analyze first** — Deep content analysis before choosing approach
 2. **Strategic combination** — Use hybrid only when it serves content
 3. **Visual hierarchy** — Clear primary/secondary/tertiary structure
 4. **Color discipline** — Purple/teal strategic, not everywhere
 5. **Professional quality** — Deliverable to clients/publications
-6. **Validate thoroughly** — Information + design + technical + audience
 
 ---
 
-**The workflow: Analyze → Strategy → Design → Prompt → Generate → Validate → Complete**
+**The workflow: Analyze → Strategy → Design → Prompt → OUTPUT**
 
-**The meta-principle: Let content dictate form. Use the full power of Nano Banana Pro to create the most effective visualization, whether that's one approach or a sophisticated orchestration of multiple techniques.**
+**The meta-principle: Let content dictate form. Create the most effective visualization prompt, whether that's one approach or a sophisticated orchestration of multiple techniques.**

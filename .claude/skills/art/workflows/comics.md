@@ -1,8 +1,10 @@
-# Hand-Drawn Comics Workflow
+# Hand-Drawn Comics Prompt Workflow
 
-**Comic strips in UL editorial illustration style, NOT cartoonish.**
+**Generates prompts for comic strips in UL editorial illustration style, NOT cartoonish.**
 
-Creates **EDITORIAL COMICS** — 3-4 panel storytelling with sophisticated hand-drawn aesthetic, maintaining UL flat color and black linework.
+Creates **EDITORIAL COMIC PROMPTS** — 3-4 panel storytelling with sophisticated hand-drawn aesthetic, maintaining UL flat color and black linework.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -287,59 +289,14 @@ Sign "Kai" small in bottom right corner of final panel in charcoal (#2D2D2D).
 
 **Default: 16:9 (horizontal)** — Classic comic strip format
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 16:9 \
-  --output /path/to/comic.png
-```
-
-**Model Recommendation:** nano-banana-pro or flux (both handle sequential panels well)
-
-**Immediately Open:**
-```bash
-open /path/to/comic.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Clear panel structure** — Panels obviously sequential
-- [ ] **Editorial aesthetic** — Sophisticated, not cartoonish
-- [ ] **Narrative flow** — Story/concept clear across panels
-- [ ] **Character consistency** — Same character recognizable in all panels
-- [ ] **Hand-drawn quality** — Imperfect linework, gestural
-- [ ] **Minimal backgrounds** — Simple, not busy
-- [ ] **Smart insight** — Punchline or point lands effectively
-- [ ] **UL aesthetic maintained** — Flat color, black linework
-
-#### Must NOT Have
-- [ ] Cartoonish or cutesy style
-- [ ] Realistic detailed illustration
-- [ ] Busy complex backgrounds
-- [ ] Too much dialogue (should be visual)
-- [ ] Inconsistent character design across panels
-- [ ] Gradients or shadows
-- [ ] Silly humor (should be sophisticated)
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Too cartoonish | "Sophisticated editorial style, New Yorker cartoon aesthetic, NOT cartoonish" |
-| Can't follow story | Clarify narrative arc: "Panel 1 setup → Panel 2 complication → Panel 3 result" |
-| Characters inconsistent | "Same simplified character across all panels, consistent design" |
-| Too complex | "Minimal backgrounds, simple scenes, focus on key action" |
-| Too much text | "Visual storytelling prioritized, minimal dialogue, brief text" |
-| Looks corporate | Reference "hand-drawn editorial comic, imperfect wobbly lines, gestural quality" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (16:9, 21:9, 1:1)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "comic" or "illustration"
 
 ---
 
@@ -378,8 +335,7 @@ open /path/to/comic.png
 2. Design layout (arrangement, panel sizes, content)
 3. Construct prompt with sequential structure
 4. Choose aspect ratio for panel layout
-5. Generate with nano-banana-pro
-6. Validate for flow and sophistication
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -395,4 +351,4 @@ open /path/to/comic.png
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

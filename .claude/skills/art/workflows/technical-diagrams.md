@@ -1,8 +1,10 @@
-# Technical Diagram Workflow
+# Technical Diagram Prompt Workflow
 
-**Hand-drawn drafting diagrams using the UL color scheme and Matthew Butterick typography.**
+**Generates prompts for hand-drawn drafting diagrams using the UL color scheme and Matthew Butterick typography.**
 
-Creates **TECHNICAL ARCHITECTURE DIAGRAMS** — hand-drawn engineering sketch style with boxes, arrows, labels, and annotations using Concourse (geometric sans) and Advocate (all-caps display) typeface influences.
+Creates **TECHNICAL ARCHITECTURE DIAGRAM PROMPTS** — hand-drawn engineering sketch style with boxes, arrows, labels, and annotations.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -360,80 +362,14 @@ CRITICAL REQUIREMENTS:
 
 **Default: 1:1 (square)** — Works for most technical diagrams
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio [1:1 or 16:9 or other] \
-  --output /path/to/technical-diagram.png
-```
-
-### Model Recommendations
-
-| Model | Best For | Command |
-|-------|----------|---------|
-| **nano-banana-pro** | Technical diagrams with text | `--model nano-banana-pro` (DEFAULT) |
-| **flux** | Maximum quality, complex diagrams | `--model flux` |
-| **gpt-image-1** | Simpler diagrams, different style | `--model gpt-image-1` |
-
-**Note:** Unlike editorial illustrations, do NOT use `--remove-bg` — technical diagrams need visible background for clarity.
-
-### Immediately Open
-
-```bash
-open /path/to/technical-diagram.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-**🚨 CRITICAL: Validate the diagram before declaring completion.**
-
-Open the generated image and check ALL criteria:
-
-#### Must Have (ALL REQUIRED)
-- [ ] **Hand-drawn quality** — Lines wobble, boxes imperfect, human feel
-- [ ] **Readable text** — Labels and annotations are legible
-- [ ] **Clear structure** — Diagram shows intended relationships
-- [ ] **Strategic color use** — Purple on 1-3 key elements, teal on flows (not everything colored)
-- [ ] **Black as primary** — Most elements in black, color is accent
-- [ ] **Flat background** — White or cream, no gradients
-- [ ] **Blueprint aesthetic** — Looks like engineering sketch, not polished diagram
-- [ ] **Technical clarity** — Actually explains the system (not just pretty)
-
-#### Must NOT Have (ALL FORBIDDEN)
-- [ ] Perfect straight lines or boxes
-- [ ] Polished vector graphic look
-- [ ] Gradients or shadows
-- [ ] Glossy or 3D effects
-- [ ] Illegible text
-- [ ] Over-use of color (everything purple/teal)
-- [ ] Too messy to understand
-
-#### If Validation Fails — REGENERATE
-
-| Problem | Fix |
-|---------|-----|
-| Lines too perfect | Emphasize "wobbly imperfect hand-drawn lines, human sketch quality" |
-| Text unreadable | Add "clear hand-lettered labels, legible text" |
-| Too polished/vector | Strengthen "engineering notebook sketch, NOT polished vector graphics" |
-| Wrong colors | Restate color requirements with specific hex codes and usage |
-| Too messy | Simplify diagram, fewer components, clearer layout |
-| Too much color | "Strategic color use — MOST elements black, purple only on [specific], teal only on [specific]" |
-| Looks like AI diagram | Reference "blueprint draft, technical sketch, hand-drawn engineering diagram" |
-
-**Regeneration Process:**
-1. Identify failure points
-2. Update prompt with specific fixes
-3. Regenerate with adjusted prompt
-4. Revalidate
-5. Repeat until all criteria pass
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (1:1, 16:9, 9:16, etc.)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "sketch"
 
 ---
 
@@ -459,8 +395,7 @@ Open the generated image and check ALL criteria:
 3. Plan strategic color usage (purple for key, teal for flow, black for structure)
 4. Construct prompt with hand-drawn drafting aesthetic
 5. Choose appropriate aspect ratio
-6. Generate and validate
-7. Regenerate if needed until validation passes
+6. Output prompt to user
 ```
 
 ### Color Strategy
@@ -494,4 +429,4 @@ Open the generated image and check ALL criteria:
 
 ---
 
-**The workflow: Extract Structure → Design Layout → Construct Prompt → Generate → VALIDATE → Complete**
+**The workflow: Extract Structure → Design Layout → Construct Prompt → OUTPUT**

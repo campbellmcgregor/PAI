@@ -1,8 +1,10 @@
-# Annotated Screenshots Workflow
+# Annotated Screenshots Prompt Workflow
 
-**Real screenshots with hand-drawn editorial annotations, arrows, and highlights using UL aesthetic.**
+**Generates prompts for real screenshots with hand-drawn editorial annotations, arrows, and highlights using UL aesthetic.**
 
-Creates **ANNOTATED SCREENSHOTS** — actual UI screenshots or code snippets with hand-drawn purple/teal commentary overlays.
+Creates **ANNOTATED SCREENSHOT PROMPTS** — actual UI screenshots or code snippets with hand-drawn purple/teal commentary overlays.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -242,59 +244,14 @@ If generating combined image is difficult:
 
 **Preserve original screenshot proportions**
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-**Option A: Generate combined (if model supports):**
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --reference-image /path/to/screenshot.png \
-  --prompt "[ANNOTATION PROMPT]" \
-  --size 2K \
-  --aspect-ratio [match screenshot] \
-  --output /path/to/annotated.png
-```
-
-**Option B: Generate annotation layer, then composite manually**
-
-**Immediately Open:**
-```bash
-open /path/to/annotated.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Screenshot readable** — Original content clearly visible
-- [ ] **Annotations clear** — Arrows/circles/text obviously hand-drawn overlays
-- [ ] **Daniel's voice** — Annotations sound like his commentary
-- [ ] **Strategic pointing** — Annotations highlight key insights, not random decoration
-- [ ] **Color emphasis** — Purple on critical, teal on helpful
-- [ ] **Hand-drawn quality** — Wobbly arrows, imperfect circles, gestural
-- [ ] **Functional value** — Annotations actually enhance understanding
-
-#### Must NOT Have
-- [ ] Unreadable screenshot
-- [ ] Polished digital annotation look
-- [ ] Generic corporate callouts ("Feature A")
-- [ ] Too many annotations (cluttered)
-- [ ] Formal voice (should be casual, direct)
-- [ ] Perfect straight arrows or circles
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Screenshot too dark | Lighten/desaturate screenshot layer, increase annotation contrast |
-| Annotations too polished | Emphasize "hand-drawn wobbly arrows, imperfect circles, gestural sketch" |
-| Voice too formal | Rewrite annotations in Daniel's casual voice: "*this right here*" |
-| Can't tell what's being pointed out | Larger/bolder arrows, clearer pointing direction |
-| Too cluttered | Reduce annotations to 3-5 key insights only |
-| Looks corporate | Reference "editorial annotation style, smart person's markup, hand-drawn notes" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** Match the original screenshot aspect ratio
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "illustration" or "annotation"
 
 ---
 
@@ -334,8 +291,7 @@ open /path/to/annotated.png
 2. Plan annotations (what to mark, commentary, colors)
 3. Construct prompt OR composite manually
 4. Match screenshot aspect ratio
-5. Generate/composite annotations
-6. Validate for clarity and voice
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -345,9 +301,9 @@ open /path/to/annotated.png
 - Black: Structural marks
 
 **Voice:**
-- Casual, direct, Daniel's commentary
+- Casual, direct commentary
 - "*this is the issue*" not "Area A shows problem"
 
 ---
 
-**The workflow: Prepare → Plan → Annotate → Generate → Validate → Complete**
+**The workflow: Prepare → Plan → Annotate → OUTPUT**

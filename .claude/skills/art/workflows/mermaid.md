@@ -1,8 +1,10 @@
-# Mermaid-Style Technical Diagrams with Excalidraw Aesthetic
+# Mermaid-Style Diagram Prompt Workflow
 
-**Hand-drawn technical diagrams combining Mermaid structure with Excalidraw sketchy aesthetic and UL color scheme.**
+**Generates prompts for hand-drawn technical diagrams combining Mermaid structure with Excalidraw sketchy aesthetic and UL color scheme.**
 
-Creates **EXCALIDRAW-STYLE MERMAID DIAGRAMS** — flowcharts, sequence diagrams, state machines, and other technical diagrams with whiteboard hand-drawn feel, derived from content via story explanation.
+Creates **EXCALIDRAW-STYLE MERMAID DIAGRAM PROMPTS** — flowcharts, sequence diagrams, state machines, and other technical diagrams with whiteboard hand-drawn feel.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -598,92 +600,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Default: 16:9** — Works for most diagram types
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 7: Generate with Nano Banana Pro
+### Recommended Settings for Generation
 
-**Execute with optimal model for text-heavy diagrams:**
-
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR COMPREHENSIVE PROMPT]" \
-  --size 2K \
-  --aspect-ratio [chosen ratio] \
-  --output /path/to/mermaid-diagram.png
-```
-
-**Why Nano Banana Pro:**
-- Best text rendering (critical for labels on nodes and arrows)
-- Handles complex multi-element compositions
-- Can render hand-drawn aesthetic while maintaining readability
-- Excellent for technical diagrams with lots of labels
-
-**Note:** Do NOT use `--remove-bg` for Mermaid diagrams — the background helps the whiteboard aesthetic.
-
-**Immediately open:**
-```bash
-open /path/to/mermaid-diagram.png
-```
-
----
-
-### Step 8: Comprehensive Validation (MANDATORY)
-
-**Validate across all dimensions:**
-
-#### Diagram Correctness
-- [ ] **Structure accurate:** Diagram follows [type] conventions
-- [ ] **Logic clear:** Flow/sequence/states make sense
-- [ ] **Complete:** All elements from CSE represented
-- [ ] **Connections correct:** Arrows point to right places
-- [ ] **Labels accurate:** Node and edge labels match content
-
-#### Excalidraw Aesthetic
-- [ ] **Hand-drawn feel:** Looks sketched on whiteboard
-- [ ] **Wobbly shapes:** No perfect rectangles/circles
-- [ ] **Sketchy arrows:** Organic curves, not ruler-straight
-- [ ] **Imperfect text:** Hand-lettered, natural slant
-- [ ] **Variable line weight:** Thicker boxes, thinner details
-- [ ] **Organic joins:** Connections look natural
-
-#### UL Editorial Style
-- [ ] **Color strategic:** Purple on critical (10-20%), teal on secondary (5-10%)
-- [ ] **Black dominant:** Most structure in black
-- [ ] **Typography hierarchy:** 3 tiers clear
-- [ ] **No gradients:** Flat colors maintained
-- [ ] **Kai signature:** Present in corner
-
-#### Readability & Clarity
-- [ ] **Labels readable:** All text legible despite hand-drawn style
-- [ ] **Flow obvious:** Can follow the diagram easily
-- [ ] **Critical path clear:** Purple highlights guide eye
-- [ ] **Not cluttered:** Spacing adequate, not cramped
-- [ ] **Scale works:** Readable at thumbnail and full-size
-
-#### If Validation Fails
-
-**Common issues and fixes:**
-
-| Problem | Diagnosis | Fix |
-|---------|-----------|-----|
-| **Too polished/digital** | Missing Excalidraw aesthetic | Emphasize: "Wobbly rectangles, sketchy arrows, hand-drawn on whiteboard, imperfect shapes" |
-| **Perfect geometry** | Shapes too clean | "All rectangles with rough edges, circles slightly oval, organic imperfection throughout" |
-| **Can't follow flow** | Unclear structure | Strengthen arrow directions, add labels, clarify critical path with purple |
-| **Labels unreadable** | Text too sketchy or small | Increase label size, simplify hand-lettering: "Readable hand-lettered style" |
-| **Wrong diagram type** | Doesn't match content | Return to Step 2, reconsider diagram type based on CSE |
-| **Missing Mermaid structure** | Doesn't follow conventions | Add proper diagram grammar: decision diamonds for flowcharts, lifelines for sequence, etc. |
-| **Color overload** | Too much purple/teal | Limit: "Purple on 2-3 critical nodes only, teal on 1-2 secondary, rest black" |
-| **Looks generic** | Missing UL or Excalidraw style | Combine both: "Excalidraw wobbly whiteboard sketch + UL purple/teal strategic accents" |
-
-**Regeneration Process:**
-1. Identify specific validation failures
-2. Update prompt with targeted fixes from table
-3. Regenerate with refined prompt
-4. Re-validate against all checkpoints
-5. Repeat until ALL validation criteria pass
-
-**CRITICAL: Do not declare completion until validation passes.**
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above based on diagram type
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "sketch" or "whiteboard"
 
 ---
 
@@ -840,8 +764,7 @@ open /path/to/mermaid-diagram.png
 4. Design Excalidraw layout (wobbly, sketchy, whiteboard)
 5. Construct comprehensive prompt
 6. Choose aspect ratio (based on diagram type)
-7. Generate with nano-banana-pro
-8. Validate thoroughly (structure + aesthetic + UL + readability)
+7. Output prompt to user
 ```
 
 ### Core Principles
@@ -853,6 +776,6 @@ open /path/to/mermaid-diagram.png
 
 ---
 
-**The workflow: /cse → Diagram Type → Structure → Excalidraw Design → Prompt → Generate → Validate → Complete**
+**The workflow: /cse → Diagram Type → Structure → Excalidraw Design → Prompt → OUTPUT**
 
-**The synthesis: Mermaid structure + Excalidraw aesthetic + UL editorial style = Technical diagrams that feel like smart sketches on a whiteboard.**
+**The synthesis: Mermaid structure + Excalidraw aesthetic + UL editorial style = Prompts for technical diagrams that feel like smart sketches on a whiteboard.**

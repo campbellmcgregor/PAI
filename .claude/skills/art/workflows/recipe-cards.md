@@ -1,8 +1,10 @@
-# Process Recipe Cards Workflow
+# Process Recipe Cards Prompt Workflow
 
-**Step-by-step visual recipes for processes and methodologies using UL aesthetic.**
+**Generates prompts for step-by-step visual recipes for processes and methodologies using UL aesthetic.**
 
-Creates **PROCESS RECIPE CARDS** — numbered steps with small illustrations for each action, combining procedural clarity with editorial style.
+Creates **PROCESS RECIPE CARD PROMPTS** — numbered steps with small illustrations for each action, combining procedural clarity with editorial style.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -272,57 +274,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Default: 9:16 (vertical)** — Classic recipe card orientation
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 9:16 \
-  --output /path/to/recipe-card.png
-```
-
-**Model Recommendation:** nano-banana-pro (best text rendering for steps)
-
-**Immediately Open:**
-```bash
-open /path/to/recipe-card.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Clear progression** — Steps obviously flow 1 → 2 → 3
-- [ ] **Scannable layout** — Easy to reference quickly
-- [ ] **Simple icons** — Each step has recognizable illustration
-- [ ] **Readable text** — All step names and descriptions legible
-- [ ] **Strategic color** — Purple on critical/outcome steps
-- [ ] **Hand-drawn quality** — Recipe card has editorial aesthetic
-- [ ] **Professional deliverable** — Client-ready quality
-
-#### Must NOT Have
-- [ ] Complex detailed illustrations (should be simple icons)
-- [ ] Cluttered layout (too much information)
-- [ ] Illegible small text
-- [ ] Missing step numbers
-- [ ] Unclear flow or progression
-- [ ] Corporate process diagram look
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Icons too complex | "Simple hand-drawn icons, minimal detail, recognizable at glance" |
-| Can't follow flow | "Clear numbered badges 1→2→3, black arrows connecting steps" |
-| Too cluttered | Reduce description text, simplify layout |
-| Looks corporate | Reference "recipe card aesthetic, hand-drawn playbook, editorial style" |
-| Text unreadable | Increase Tier 2/3 text sizes, more spacing |
-| Missing emphasis | "Purple (#4A148C) on Step [X] critical and final outcome step" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (9:16, 1:1, 16:9)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "infographic" or "illustration"
 
 ---
 
@@ -357,8 +316,7 @@ open /path/to/recipe-card.png
 2. Design layout (vertical/grid, icons, flow)
 3. Construct prompt with numbered progression
 4. Choose aspect ratio for layout type
-5. Generate with nano-banana-pro
-6. Validate for scannability and professionalism
+5. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -374,4 +332,4 @@ open /path/to/recipe-card.png
 
 ---
 
-**The workflow: Define → Design → Construct → Generate → Validate → Complete**
+**The workflow: Define → Design → Construct → OUTPUT**

@@ -1,8 +1,10 @@
-# Visual Aphorisms & Quote Cards Workflow
+# Visual Aphorisms & Quote Cards Prompt Workflow
 
-**Daniel's aphorisms as shareable visual quote cards using UL aesthetic.**
+**Generates prompts for shareable visual quote cards using UL aesthetic.**
 
-Creates **VISUAL APHORISM CARDS** — Daniel's insights and quotes as shareable square images with massive typography and minimal hand-drawn accents.
+Creates **VISUAL APHORISM CARD PROMPTS** — insights and quotes as shareable square images with massive typography and minimal hand-drawn accents.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -221,57 +223,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Always 1:1 (square)** — Optimized for social media (Instagram, LinkedIn, X)
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 1:1 \
-  --output /path/to/aphorism.png
-```
-
-**Model Recommendation:** nano-banana-pro (best text rendering) or flux (stylistic variety)
-
-**Immediately Open:**
-```bash
-open /path/to/aphorism.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Quote readable** — Instantly legible even at thumbnail size
-- [ ] **Typography dominant** — Quote is 80-90% of visual
-- [ ] **Hand-lettered** — Imperfect, gestural quality (not digital font)
-- [ ] **High contrast** — Text pops from background
-- [ ] **Minimal accent** — Small element supports, doesn't compete
-- [ ] **Shareable** — Works as social media post
-- [ ] **Brand presence** — Purple visible somewhere (text/accent/background)
-
-#### Must NOT Have
-- [ ] Perfect digital font (should be hand-lettered)
-- [ ] Busy background or complex illustration
-- [ ] Low contrast (can't read text easily)
-- [ ] Accent element competing with quote
-- [ ] Tiny text (must be readable at thumbnail)
-- [ ] Gradients or shadows
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Text too small | "MASSIVE hand-lettered typography filling 85% of frame" |
-| Looks like digital font | "Hand-drawn Advocate letters, imperfect wobbly strokes, gestural quality" |
-| Accent too busy | "MINIMAL accent: small simple [element], 8% of image, subtle" |
-| Can't read thumbnail | Increase text size, stronger contrast, simplify layout |
-| No brand presence | "Purple (#4A148C) on [accent element / text / background]" |
-| Too complex | "Typography IS the visual — quote dominant, minimal everything else" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** 1:1 (square)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "typography" or "poster"
 
 ---
 
@@ -315,9 +274,7 @@ open /path/to/aphorism.png
 2. Design typography layout (arrangement, emphasis, size)
 3. Choose minimal accent element (5-10% of image)
 4. Construct prompt with massive typography
-5. Always use 1:1 square aspect ratio
-6. Generate with nano-banana-pro
-7. Validate for readability and shareability
+5. Output prompt to user (always 1:1 square)
 ```
 
 **Color Strategy:**
@@ -328,8 +285,7 @@ open /path/to/aphorism.png
 **Key Principle:**
 - **Typography IS the visual** — Everything else is subtle support
 - Shareable, memorable, instantly readable
-- Daniel's voice amplified visually
 
 ---
 
-**The workflow: Select → Design → Construct → Generate → Validate → Complete**
+**The workflow: Select → Design → Construct → OUTPUT**

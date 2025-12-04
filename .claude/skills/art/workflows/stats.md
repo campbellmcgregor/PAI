@@ -1,8 +1,10 @@
-# Illustrated Statistics Workflow
+# Illustrated Statistics Prompt Workflow
 
-**Single striking statistics illustrated as visual data points using UL aesthetic.**
+**Generates prompts for single striking statistics illustrated as visual data points using UL aesthetic.**
 
-Creates **ILLUSTRATED STAT CARDS** — one number/statistic made visual with simple illustration and editorial style.
+Creates **ILLUSTRATED STAT CARD PROMPTS** — one number/statistic made visual with simple illustration and editorial style.
+
+**Output:** A structured prompt ready to paste into any AI image generator.
 
 ---
 
@@ -250,57 +252,14 @@ Sign "Kai" small in bottom right corner in charcoal (#2D2D2D).
 
 **Default: 1:1 (square)** — Most versatile for social/newsletter
 
----
+**Output:** Present the complete prompt to the user, ready for their image generator.
 
-### Step 5: Execute Generation
+### Recommended Settings for Generation
 
-```bash
-bun run ${PAI_DIR}/skills/art/tools/generate-ulart-image.ts \
-  --model nano-banana-pro \
-  --prompt "[YOUR PROMPT]" \
-  --size 2K \
-  --aspect-ratio 1:1 \
-  --output /path/to/stat-card.png
-```
-
-**Model Recommendation:** nano-banana-pro (excellent for rendering numbers clearly)
-
-**Immediately Open:**
-```bash
-open /path/to/stat-card.png
-```
-
----
-
-### Step 6: Validation (MANDATORY)
-
-#### Must Have
-- [ ] **Number dominant** — Statistic is 60-70% of visual, immediately visible
-- [ ] **Readable number** — Clear even at thumbnail size
-- [ ] **Hand-lettered** — Imperfect, gestural quality (not digital font)
-- [ ] **Illustration simple** — Small supporting visual, not complex scene
-- [ ] **Context clear** — Metric/context text explains what number means
-- [ ] **High contrast** — Purple or black number pops from background
-- [ ] **Scannable** — Number jumps out immediately
-
-#### Must NOT Have
-- [ ] Number too small (should dominate)
-- [ ] Digital font rendering (should be hand-lettered)
-- [ ] Complex detailed illustration (should be simple icon)
-- [ ] Illustration competing with number
-- [ ] Low contrast (can't read number)
-- [ ] Missing context (unclear what stat represents)
-
-#### If Validation Fails
-
-| Problem | Fix |
-|---------|-----|
-| Number too small | "MASSIVE hand-lettered number filling 65% of image height" |
-| Looks digital | "Hand-drawn Advocate style number, wobbly imperfect strokes" |
-| Illustration too complex | "SMALL SIMPLE illustration, minimal detail, 25% of image size" |
-| Can't read thumbnail | Increase number size, stronger contrast |
-| Unclear meaning | Add metric text above: "of [X]", context below: "[what they do]" |
-| No visual interest | "Small illustrated [icon] showing what stat represents" |
+When using the prompt, suggest these settings:
+- **Aspect ratio:** As determined above (1:1, 16:9, 9:16)
+- **Quality:** High/2K
+- **Style:** If your tool has style options, choose "typography" or "infographic"
 
 ---
 
@@ -345,8 +304,7 @@ open /path/to/stat-card.png
 3. Choose simple illustration (what stat represents)
 4. Construct prompt with massive number
 5. Use 1:1 square aspect ratio (usually)
-6. Generate with nano-banana-pro
-7. Validate for dominance and readability
+6. Output prompt to user
 ```
 
 **Color Strategy:**
@@ -362,4 +320,4 @@ open /path/to/stat-card.png
 
 ---
 
-**The workflow: Select → Design → Construct → Generate → Validate → Complete**
+**The workflow: Select → Design → Construct → OUTPUT**
